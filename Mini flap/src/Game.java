@@ -119,24 +119,6 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 
                                
 
-                                drawCircle(g2d);
-
-                                Color BLACK = new Color(0,0,0);
-
-                                g2d.setColor(BLACK);
-
-                                g2d.drawString(guesses,50, 600);
-
-                            
-
-                                g2d.drawString("Press Enter To Roll Another Word",100, 100);
-
-                               
-
-                               
-
-                               
-
                                 g2d.setFont(new Font ("Lora", Font.BOLD, 100));
 
                                
@@ -179,12 +161,6 @@ public class Game  extends JPanel implements Runnable, KeyListener{
                                
 
                 }
-
- 
-
- 
-
- 
 
  
 
@@ -248,26 +224,6 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 
                                              
 
- 
-
-                      
-
-               
-
-
-                                               
-
-                
-
-                               
-
-                
-
- 
-
- 
-
- 
 
                 @Override
 
@@ -283,12 +239,5 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 
                
 
-               
-
-               
-
- 
-
-               
 
 }
