@@ -31,36 +31,3 @@ public class BackImage extends JFrame {
 	}
 	
 }
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-
-public class BackImage extends JFrame {
-	
-	JLabel L1;
-	
-	public BackImage() {
-		
-		setTitle("MiniFlap");
-		setSize(700,700);
-		setLocationRelativeTo(null);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setVisible(true);
-		setLayout(new BorderLayout());
-		
-		setContentPane(new JLabel(new ImageIcon("D:\\s1950924\\Documents\\My Pictures\\Saved Pictures\\MiniFlap.png")));
-		setLayout(new FlowLayout());
-		L1 = new JLabel();
-		add(L1);
-		setSize(500,500);
-	}
-
-	public static void main (String arg[]) {
-		
-		new BackImage();
-	}
-	
-}
