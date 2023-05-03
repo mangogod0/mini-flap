@@ -41,8 +41,54 @@ public class Game extends JPanel implements Runnable{
 		//START CODING GRAPHICS HERE
 		
 		g2d.setColor(Color.black);
-		g2d.fillRect(300, 70, 30, 100);	
+		g2d.fillRect(100, 50, 50, 300);
+		g2d.setColor(Color.black);
+		g2d.fillRect(250, 50, 50, 300);
+		g2d.setColor(Color.black);
+		g2d.fillRect(400, 50, 50, 300);
+		g2d.setColor(Color.black);
+		g2d.fillRect(550, 50, 50, 300);
+		g2d.setColor(Color.black);
+		g2d.fillRect(700, 50, 50, 300);
+		g2d.setColor(Color.black);
+		g2d.fillRect(850, 50, 50, 300);
+		g2d.setColor(Color.black);
+		g2d.fillRect(1000, 50, 50, 300);
+		g2d.setColor(Color.black);
+		g2d.fillRect(1150, 50, 50, 300);
+		g2d.setColor(Color.black);
+		g2d.fillRect(1300, 50, 50, 300);
+		g2d.setColor(Color.black);
+		g2d.fillRect(1450, 50, 50, 300);
+		g2d.setColor(Color.black);
+		g2d.fillRect(1600, 50, 50, 300);
+		g2d.setColor(Color.black);
+		g2d.fillRect(1750, 50, 50, 300);
 		
+		g2d.setColor(Color.black);
+		g2d.fillRect(100, 600, 50, 300);
+		g2d.setColor(Color.black);
+		g2d.fillRect(250, 600, 50, 300);
+		g2d.setColor(Color.black);
+		g2d.fillRect(400, 600, 50, 300);
+		g2d.setColor(Color.black);
+		g2d.fillRect(550, 600, 50, 300);
+		g2d.setColor(Color.black);
+		g2d.fillRect(700, 600, 50, 300);
+		g2d.setColor(Color.black);
+		g2d.fillRect(850, 600, 50, 300);
+		g2d.setColor(Color.black);
+		g2d.fillRect(1000, 600, 50, 300);
+		g2d.setColor(Color.black);
+		g2d.fillRect(1150, 600, 50, 300);
+		g2d.setColor(Color.black);
+		g2d.fillRect(1300, 600, 50, 300);
+		g2d.setColor(Color.black);
+		g2d.fillRect(1450, 600, 50, 300);
+		g2d.setColor(Color.black);
+		g2d.fillRect(1600, 600, 50, 300);
+		g2d.setColor(Color.black);
+		g2d.fillRect(1750, 600, 50, 300);
 	
 		
 		
