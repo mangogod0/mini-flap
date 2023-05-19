@@ -8,7 +8,7 @@ import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class MiniFlap extends JPanel implements KeyListener {
+public class Background_image extends JPanel implements KeyListener {
     private static final int WIDTH = 400;
     private static final int HEIGHT = 600;
     private static final Color BACKGROUND_COLOR = Color.CYAN;
@@ -17,7 +17,7 @@ public class MiniFlap extends JPanel implements KeyListener {
     private Image backgroundImage;
    
     
-    public Miniflap() {
+    public Background_image() {
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
         setBackground(BACKGROUND_COLOR);
         loadBackgroundImage();
@@ -57,7 +57,7 @@ public class MiniFlap extends JPanel implements KeyListener {
     
     public static void main(String[] args) {
         JFrame frame = new JFrame("Flappy Bird");
-        Miniflap game = new Miniflap();
+        Background_image game = new Background_image();
         
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(game);
