@@ -6,20 +6,24 @@ import java.awt.image.BufferedImage;
 public class Game extends JPanel implements Runnable{
 	private BufferedImage back;
 	
-	public Game() {
-		back=null;
-		
+	public class StartScreen {
+	    public static void main(String[] args) {
+	        SwingUtilities.invokeLater(() -> createAndShowGUI());
+	    }
+
+	    private static void createAndShowGUI() {
+	        JFrame frame = new JFrame("Start Screen");
+	        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+	        JLabel label = new JLabel("Welcome to My Application");
+	        frame.getContentPane().add(label);
+
+	        frame.pack();
+	        frame.setLocationRelativeTo(null); // Center the frame on the screen
+	        frame.setVisible(true);
+	    }
 	}
-	
-	public void run() {
-		try {
-			while(true) {
-				Thread.currentThread().sleep(5);
-				repaint();
-			}
-		}
-		catch(Exception e) {}
-	}
+
 	
 	public void paint (Graphics g)
 	{
@@ -40,58 +44,14 @@ public class Game extends JPanel implements Runnable{
 		
 		//START CODING GRAPHICS HERE
 		
-		g2d.setColor(Color.black);
-		g2d.fillRect(100, 50, 50, 300);
-		g2d.setColor(Color.black);
-		g2d.fillRect(250, 50, 50, 300);
-		g2d.setColor(Color.black);
-		g2d.fillRect(400, 50, 50, 300);
-		g2d.setColor(Color.black);
-		g2d.fillRect(550, 50, 50, 300);
-		g2d.setColor(Color.black);
-		g2d.fillRect(700, 50, 50, 300);
-		g2d.setColor(Color.black);
-		g2d.fillRect(850, 50, 50, 300);
-		g2d.setColor(Color.black);
-		g2d.fillRect(1000, 50, 50, 300);
-		g2d.setColor(Color.black);
-		g2d.fillRect(1150, 50, 50, 300);
-		g2d.setColor(Color.black);
-		g2d.fillRect(1300, 50, 50, 300);
-		g2d.setColor(Color.black);
-		g2d.fillRect(1450, 50, 50, 300);
-		g2d.setColor(Color.black);
-		g2d.fillRect(1600, 50, 50, 300);
-		g2d.setColor(Color.black);
-		g2d.fillRect(1750, 50, 50, 300);
 		
-		g2d.setColor(Color.black);
-		g2d.fillRect(100, 600, 50, 300);
-		g2d.setColor(Color.black);
-		g2d.fillRect(250, 600, 50, 300);
-		g2d.setColor(Color.black);
-		g2d.fillRect(400, 600, 50, 300);
-		g2d.setColor(Color.black);
-		g2d.fillRect(550, 600, 50, 300);
-		g2d.setColor(Color.black);
-		g2d.fillRect(700, 600, 50, 300);
-		g2d.setColor(Color.black);
-		g2d.fillRect(850, 600, 50, 300);
-		g2d.setColor(Color.black);
-		g2d.fillRect(1000, 600, 50, 300);
-		g2d.setColor(Color.black);
-		g2d.fillRect(1150, 600, 50, 300);
-		g2d.setColor(Color.black);
-		g2d.fillRect(1300, 600, 50, 300);
-		g2d.setColor(Color.black);
-		g2d.fillRect(1450, 600, 50, 300);
-		g2d.setColor(Color.black);
-		g2d.fillRect(1600, 600, 50, 300);
 		g2d.setColor(Color.black);
 		g2d.fillRect(1750, 600, 50, 300);
 	
 		
 		
+	
+
 		
 		
 		
