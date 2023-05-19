@@ -1,33 +1,79 @@
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
+import javax.swing.JPanel;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-public class Background_image extends JFrame {
-	
-	JLabel L1;
-	
-	public Background_image() {
-		
-		setTitle("MiniFlap");
-		setSize(1200,1200);
-		setLocationRelativeTo(null);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setVisible(true);
-		setLayout(new BorderLayout());
-		
-		setContentPane(new JLabel(new ImageIcon("C:\\Users\\s1890980\\OneDrive - Houston Independent School District\\Pictures\\Saved Pictures\\MiniFlap.png")));
-		setLayout(new FlowLayout());
-		L1 = new JLabel();
-		add(L1);
-		setSize(1200,700);
-	}
-
-	public static void main (String arg[]) {
-		
-		new Background_image();
-	}
-	
+public class MiniFlap extends JPanel implements KeyListener {
+    private static final int WIDTH = 400;
+    private static final int HEIGHT = 600;
+    private static final Color BACKGROUND_COLOR = Color.CYAN;
+    private static final String BACKGROUND_IMAGE_PATH = "background.png";
+    
+    private Image backgroundImage;
+   
+    
+    public Miniflap() {
+        setPreferredSize(new Dimension(WIDTH, HEIGHT));
+        setBackground(BACKGROUND_COLOR);
+        loadBackgroundImage();
+       
+    }
+    
+    private void loadBackgroundImage() {
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        backgroundImage = toolkit.getImage(getClass().getResource(BACKGROUND_IMAGE_PATH));
+    }
+    
+    public void update() {
+        
+    }
+    
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        drawBackground(g);
+       
+    }
+    
+    private void drawBackground(Graphics g) {
+        g.drawImage(backgroundImage, 0, 0, null);
+    }
+    
+    public void keyPressed(KeyEvent e) {
+        
+    }
+    
+    public void keyReleased(KeyEvent e) {
+        
+    }
+    
+    public void keyTyped(KeyEvent e) {
+       
+    }
+    
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Flappy Bird");
+        Miniflap game = new Miniflap();
+        
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.add(game);
+        frame.addKeyListener(game);
+        frame.pack();
+        frame.setLocationRelativeTo(null); 
+        frame.setVisible(true);
+        
+        while (true) {
+            game.update();
+            game.repaint();
+            try {
+                Thread.sleep(10); 
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
