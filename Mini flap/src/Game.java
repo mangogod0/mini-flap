@@ -1,64 +1,53 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-import java.awt.image.BufferedImage;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Game extends JPanel implements Runnable{
-	private BufferedImage back;
-	
-	public class StartScreen {
-	    public static void main(String[] args) {
-	        SwingUtilities.invokeLater(() -> createAndShowGUI());
-	    }
+public class Game {
+    private JFrame frame;
+    private JLabel titleLabel;
+    private JButton startButton;
 
-	    private static void createAndShowGUI() {
-	        JFrame frame = new JFrame("Start Screen");
-	        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    public Game() {
+        createGUI();
+    }
 
-	        JLabel label = new JLabel("Welcome to My Application");
-	        frame.getContentPane().add(label);
+    private void createGUI() {
+        frame = new JFrame("Start Screen");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 300);
+        frame.setLocationRelativeTo(null); // Center the frame on the screen
 
-	        frame.pack();
-	        frame.setLocationRelativeTo(null); // Center the frame on the screen
-	        frame.setVisible(true);
-	    }
-	}
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        panel.setBackground(Color.WHITE);
 
-	
-	public void paint (Graphics g)
-	{
-		Graphics2D twoDgraph = (Graphics2D)g;
-	//take a snap shop of the current screen and same it as an image
-	//that is the exact same width and height as the current screen
-		if (back==null) {
-			back =(BufferedImage) (createImage(getWidth(), getHeight()));
-				}
+        titleLabel = new JLabel("Welcome to My Application");
+        titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
+        titleLabel.setBorder(BorderFactory.createEmptyBorder(30, 0, 30, 0));
 
-	//create a graphics reference to the back ground image
-	//we will draw all changes on the background image
-		Graphics g2d = back.createGraphics();
-		
-		//this clears the old image, like an EtchASketch. If you see the old image when we learn motion, you deleted this line.
-		g2d.clearRect(0, 0, getSize().width, getSize().height); 
-		
-		
-		//START CODING GRAPHICS HERE
-		
-		
-		g2d.setColor(Color.black);
-		g2d.fillRect(1750, 600, 50, 300);
-	
-		
-		
-	
+        startButton = new JButton("Start");
+        startButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        startButton.setFont(new Font("Arial", Font.PLAIN, 16));
+        startButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Add logic to start the application or switch to the main screen
+            }
+        });
 
-		
-		
-		
-		//This line tells the program to draw everything above. If you delete this, nothing will show up.
-		twoDgraph.drawImage(back, 0, 0, null);
-	}
-	
-	}
+        panel.add(titleLabel);
+        panel.add(startButton);
 
+        frame.add(panel);
+        frame.setVisible(true);
+    }
 
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                new Game();
+            }
+        });
+    }
+}
